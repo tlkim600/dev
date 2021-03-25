@@ -16,7 +16,7 @@ public class logAspect {
     /*@Around("execution(* com.example.demo.controller..*.*(..))")*/
     /*@Around("execution(* com.example.demo..*.*(..))")*/
     public void logging() throws Throwable {
-        System.out.println("asdasdasd");
+        System.out.println("asdasdasdas das das ");
     }
 
 }
