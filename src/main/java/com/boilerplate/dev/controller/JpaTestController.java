@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.boilerplate.dev.model.UserDto;
+import com.boilerplate.dev.model.entity.JpaTest;
 import com.boilerplate.dev.service.DevService;
 import com.boilerplate.dev.service.JpaTestSerive;
 
@@ -34,9 +35,11 @@ public class JpaTestController {
 	private JpaTestSerive jpaTestSerive;
 
 	@GetMapping("/jpaTest")
-	public void users() {
-		jpaTestSerive.find();
-//		jpaTestSerive.save();
-//		return users;
+	public List<JpaTest> find() {
+		return jpaTestSerive.find();
+	}
+	@GetMapping("/jpaTest/save")
+	public void save() {
+		jpaTestSerive.save();
 	}
 }

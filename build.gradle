@@ -32,7 +32,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'javax.xml.bind:jaxb-api:2.3.0'
     
-    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '2.4.3'
+    //implementation group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '2.4.3'
+    implementation('org.springframework.boot:spring-boot-starter-data-mongodb')
 	
 	
 	// https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-mapper-asl

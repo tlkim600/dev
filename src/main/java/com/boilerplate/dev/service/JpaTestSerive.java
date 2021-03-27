@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.boilerplate.dev.model.entity.JpaTest;
-import com.boilerplate.dev.repository.JpaTestRepository;
+import com.boilerplate.dev.repository.jpa.JpaTestRepository;
 
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
@@ -31,7 +31,7 @@ public class JpaTestSerive {
 	public void save() {
 
 		List<JpaTest> jpaTests = new ArrayList<>();
-		for (int i = 0; i < 100000; i++) {
+		for (int i = 0; i < 100; i++) {
 			JpaTest jpaTest = new JpaTest();
 			jpaTest.setId(UUID.randomUUID().toString());
 			jpaTest.setTest_col("testCol" + i);
@@ -45,8 +45,8 @@ public class JpaTestSerive {
 		System.out.println(" =================jpa bulk Test End : ( " + LocalDateTime.now() + " ) =================");
 	}
 
-	public void find() {
-		jpaTestRepository.findAll();
+	public List<JpaTest> find() {
+		return jpaTestRepository.findAll();
 //		em.createQuery("SELECT p FROM jpa_test p")
 //        .getResultList()
 //        .forEach(System.out::println); 
