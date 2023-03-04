@@ -9,8 +9,9 @@ services:
       ports:
         - 3307:3306
       volumes:
-        - "./mariadb/conf.d:/etc/mysql/conf.d"
-        - "./mariadb/data:/var/lib/mysql"
+#        - "./mariadb/conf.d:/etc/mysql/conf.d"
+#        - "./mariadb/data:/var/lib/mysql"
+        - ./init-db/:/docker-entrypoint-initdb.d/
       environment:
         MARIADB_DATABASE: dev_maria
         MARIADB_USER: dev_maria_user
